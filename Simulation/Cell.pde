@@ -11,5 +11,15 @@ class Cell{
     
   }
   
+  void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == LEFT) {
+    } else if (keyCode == RIGHT) {
+    } else if (keyCode == UP) {
+    } else if (keyCode == DOWN) {
+    } 
+  } else {
+  }
+}
 
 }
