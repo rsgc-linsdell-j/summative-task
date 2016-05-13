@@ -11,7 +11,7 @@ The cell will be guided using the arrow keys on the computer. The two non-agress
 
 ## Sub-goals
 
-* extend Paddle class I made for Brick Breaker to create the controllable cell
+* extend Mover class I made for Brick Breaker to create the controllable cell
 * extend the Bouncer class to create all of the other bacterium, however, unlike the Bouncer they will not bounce off objects, they will be absorbed
 * use vectors to move all of the different cells around the screen
 * harmless bacteria move randomly
