@@ -2,20 +2,18 @@
 
 ## Overall goal
 
-My summative task will be a combination software and hardware product.
+My summative task will be to create a playable simulation of the theory of endosymbiosis.
 
-I will program a sensor attached to an Arduino board. The sensor will be able to detect how hard a person is blowing air toward it (perhaps a pressure sensor? a mic?).
+The player starts off as a prokaryotic cell, containing only a nucleus. You traverse the water of a bog containing aerobic proteobacterium and cyanobacterium, as well as harmful parasitic bacterium. The goal for the cell is to absorb multiple aerobic proteobacterium and cyanobacterium in the hopes of becoming a eukaryotic cell.
 
-When a person blows on the sensor, this information is transmitted to a Processing sketch.
+The cell will be guided using the arrow keys on the computer. The two non-agressive bacterium will move randomly, and the parasitic bacterium will travel towards the cell slowly.
 
-In the sketch, a visual representation of a "ripe" dandelion will be shown.  The dandelion seeds will disperse on screen in the sketch, simulating the physics of the motion of real dandelion seeds, when someone blows them off the stem in real life.
 
 ## Sub-goals
 
-* extend Motion class (that we developed earlier together) to allow for force accumulation (wind, gravity, other forces)
-* make the mouse movement translate to a wind force
-* make it so that moving the mouse causes the "seeds" of the dandelion to disperse
-* modify the visual representation of the Motion class to more closely resembly dandelion seeds
-* identify an Arduino sensor that might work to detect air pressure / volume
-* program sensor to send values to Processing sketch
-* translate sensor output to wind force in sketch
+* extend Paddle class I made for Brick Breaker to create the controllable cell
+* extend the Bouncer class to create all of the other bacterium, however, unlike the Bouncer they will not bounce off objects, they will be absorbed
+* use vectors to move all of the different cells around the screen
+* harmless bacteria move randomly
+* harmful bacteria move slowly towards the main cell
+
