@@ -6,10 +6,8 @@ class Cell{
 
   Cell(){
     
-    location = new RVector( 100, 100 ); // center of canvas when instantiated
+    location = new RVector(100, 100 ); // center of canvas when instantiated
     velocity = new RVector(0, 0);  // object at rest when instantiated
-    
-    
   }
   
   void keyPressed() {
@@ -29,8 +27,9 @@ class Cell{
 
 void create(){
   keyPressed();
+  stroke(0);
   fill(153);
-  ellipse(location.x,location.y,size,size);
+  ellipse(100,100,25,25);
 
 }
 

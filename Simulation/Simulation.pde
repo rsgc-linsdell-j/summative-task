@@ -8,6 +8,6 @@ void setup(){
 
 }
 
-void loop(){
+void draw(){
   cell.create();
 }
