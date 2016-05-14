@@ -14,12 +14,21 @@ class Cell{
   void keyPressed() {
   if (key == CODED) {
     if (keyCode == LEFT) {
+      location.x -= 1;
     } else if (keyCode == RIGHT) {
+      location.x += 1;
     } else if (keyCode == UP) {
+      location.y -= 1;
     } else if (keyCode == DOWN) {
+      location.x += 1;
     } 
   } else {
   }
+}
+
+void create(){
+  rect(location.x,location.y);
+
 }
 
 }
