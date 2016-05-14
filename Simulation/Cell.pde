@@ -2,6 +2,7 @@ class Cell{
   
   RVector location;
   RVector velocity;
+  size = 20;
 
   Cell(){
     
@@ -27,7 +28,7 @@ class Cell{
 }
 
 void create(){
-  rect(location.x,location.y);
+  rect(location.x,location.y,radius,radius);
 
 }
 
