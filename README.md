@@ -6,7 +6,7 @@ My summative task will be to create a playable simulation of the theory of endos
 
 The player starts off as a prokaryotic cell, containing only a nucleus. You traverse the water of a bog containing aerobic proteobacterium and cyanobacterium, as well as harmful parasitic bacterium. The goal for the cell is to absorb multiple aerobic proteobacterium and cyanobacterium in the hopes of becoming a eukaryotic cell.
 
-The cell will be guided using the arrow keys on the computer. The two non-agressive bacterium will move randomly, and the parasitic bacterium will travel towards the cell slowly.
+The cell will be guided using the mouse on the computer. The two non-agressive bacterium will move randomly, and the parasitic bacterium will travel towards the cell slowly.
 
 
 ## Sub-goals
