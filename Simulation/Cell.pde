@@ -2,9 +2,10 @@ class Cell{
   
   RVector location;
   RVector velocity;
+  RVector acceleration;
   float size = 30;
   
-  RVector mouse = new RVector(mouseX, mouseY);
+  
 
   Cell(){
     
@@ -15,6 +16,15 @@ class Cell{
 
 
 void create(){
+  RVector mouse = new RVector(mouseX, mouseY);
+  RVector direction = RVector.sub(mouse, location);
+  direction.normalize();
+  direction.mult(0.1);
+  acceleration = direction;
+  velocity.add(acceleration);
+  velocity.limit(1);
+  location.add(velocity);
+  
   stroke(0);
   fill(153);
   ellipse(location.x,location.y,size,size);
