@@ -15,7 +15,7 @@ class Cell{
   
 
 
-void create(){
+void update(){
   RVector mouse = new RVector(mouseX, mouseY);
   RVector direction = RVector.sub(mouse, location);
   direction.normalize();

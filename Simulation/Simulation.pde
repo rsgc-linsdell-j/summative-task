@@ -9,5 +9,5 @@ void setup(){
 
 void draw(){
   background(0, 204, 0);
-  cell.create();
+  cell.update();
 }
