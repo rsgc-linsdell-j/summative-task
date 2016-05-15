@@ -25,7 +25,7 @@ class Cyano{
   location.add(velocity);
   
   stroke(0);
-  fill(153);
+  fill(5,240,217);
   ellipse(location.x,location.y,size,size);
   }
   

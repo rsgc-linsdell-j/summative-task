@@ -4,7 +4,7 @@ Cyano cyano = new Cyano();
 
 void setup(){
 
-  size(640, 360);
+  size(1280, 720);
   background(0, 204, 0);
 
 }

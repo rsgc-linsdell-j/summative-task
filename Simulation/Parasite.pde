@@ -21,9 +21,8 @@ class Parasite{
   velocity.add(acceleration);
   velocity.limit(1);
   location.add(velocity);
-  
   stroke(0);
-  fill(153);
+  fill(255,0,0);
   ellipse(location.x,location.y,size,size);
   }
   
