@@ -5,6 +5,8 @@ class Parasite{
   
   }
   
-  
+  void update(RVector cell){
+    
+  }
   
 }
