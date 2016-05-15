@@ -1,6 +1,7 @@
 Cell cell = new Cell();
 Parasite parasite = new Parasite();
 Cyano cyano = new Cyano();
+Proteo proteo = new Proteo();
 
 void setup(){
 
@@ -14,4 +15,5 @@ void draw(){
   cell.update();
   parasite.update(cell.getLocation());
   cyano.update();
+  proteo.update();
 }
