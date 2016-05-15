@@ -1,0 +1,10 @@
+class Proteo{
+
+  
+  Proteo(){
+  
+  
+  }
+
+
+}
