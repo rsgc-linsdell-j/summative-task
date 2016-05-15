@@ -22,7 +22,7 @@ void update(){
   direction.mult(0.1);
   acceleration = direction;
   velocity.add(acceleration);
-  velocity.limit(1);
+  velocity.limit(1.5);
   location.add(velocity);
   
   stroke(0);
