@@ -31,4 +31,8 @@ void create(){
 
 }
 
+public RVector getLocation(){
+  return location;
+}
+
 }
