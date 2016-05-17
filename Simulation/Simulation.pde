@@ -8,6 +8,7 @@ void setup(){
   size(1280, 720);
   background(0, 204, 0);
   cell = new Cell();
+  // loops to instantiate multiple instances of the three bacterium
   for(int i = 0; i<parasites.length; i++)
     parasites[i] = new Parasite();
   for(int i = 0; i<cyanos.length; i++)
@@ -19,7 +20,11 @@ void setup(){
 void draw(){
   background(0, 204, 0);
   cell.update();
-  parasite.update(cell.getLocation());
-  cyano.update();
-  proteo.update();
+  // loops to update all of the bacterium
+  for(int i = 0; i<parasites.length; i++)
+    parasites[i].update(cell.getLocation());
+  for(int i = 0; i<cyanos.length; i++)
+    cyanos[i].update();
+  for(int i = 0; i<proteos.length; i++)
+    proteos[i].update();
 }
