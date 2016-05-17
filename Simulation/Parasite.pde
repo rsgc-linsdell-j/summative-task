@@ -7,6 +7,7 @@ class Parasite{
   float radius = size/2;
   
   RVector cellLocation;
+  Cell cell;
   
   Parasite(){
     
@@ -17,8 +18,9 @@ class Parasite{
   }
   
   void update(Cell cell){
-  if(!checkCell()){
+  this.cell = cell;
   this.cellLocation = cell.getLocation();
+  if(!checkCellCollision()){
   RVector direction = RVector.sub(cellLocation, location);
   direction.normalize();
   direction.mult(0.1);
@@ -37,19 +39,28 @@ class Parasite{
       text("YOU LOSE", width/2, height/2); 
     }
   }
-  }
-  }
   
-  boolean checkCell(){
-  for (int i = 0; i < 360; i += 10) {
 
+}
+  
+  
+  boolean checkCellCollision(){
+    RVector pCirc, cCirc;
+  for (int i = 0; i < 360; i += 10) {
       float xP = location.x + cos(radians(i))*radius; 
       float yP = location.y + sin(radians(i))*radius; 
-      RVector positionOnCircumference = new RVector(xP, yP);
+      pCirc = new RVector(xP, yP);
+      for (int j = 0; j < 360; j += 10) {
+      float xC = cellLocation.x + cos(radians(j))*cell.getRadius();
+      float yC = cellLocation.y + sin(radians(j))*cell.getRadius();
+      cCirc = new RVector(xC, yC);
+      if(pCirc.x == cCirc.x && pCirc.y == cCirc.y){
+      return true;
+      }
       
-      float xC = cellLocation.x;
-  
   }
-  
+  }
+  return false;
 
+}
 }
