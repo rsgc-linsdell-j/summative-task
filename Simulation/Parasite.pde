@@ -30,11 +30,10 @@ class Parasite {
       fill(255, 0, 0);
       ellipse(location.x, location.y, size, size);
     } else {
-      while (true) {
-        background(0);
+        background(51);
         textSize(32);
         text("YOU LOSE", width/2, height/2);
-      }
+        noLoop();
     }
   }
 
