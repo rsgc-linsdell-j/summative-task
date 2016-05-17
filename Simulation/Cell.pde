@@ -4,6 +4,7 @@ class Cell{
   RVector velocity;
   RVector acceleration;
   float size = 30;
+  float radius = size/2;
   
   
 
@@ -33,6 +34,10 @@ void update(){
 
 public RVector getLocation(){
   return location;
+}
+
+public float getRadius(){
+  return radius;
 }
 
 }

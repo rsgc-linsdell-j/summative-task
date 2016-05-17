@@ -22,7 +22,7 @@ void draw(){
   cell.update();
   // loops to update all of the bacterium
   for(int i = 0; i<parasites.length; i++)
-    parasites[i].update(cell.getLocation());
+    parasites[i].update(cell);
   for(int i = 0; i<cyanos.length; i++)
     cyanos[i].update();
   for(int i = 0; i<proteos.length; i++)

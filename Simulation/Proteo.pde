@@ -5,6 +5,7 @@ class Proteo{
   RVector acceleration;
   RVector point;
   float size = 20;
+  float radius = size/2;
 
   Proteo(){
     

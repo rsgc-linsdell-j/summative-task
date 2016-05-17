@@ -5,6 +5,7 @@ class Cyano{
   RVector acceleration;
   RVector point;
   float size = 40;
+  float radius = size/2;
 
   Cyano(){
     

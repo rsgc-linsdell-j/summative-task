@@ -4,8 +4,9 @@ class Parasite{
   RVector velocity;
   RVector acceleration;
   float size = 40;
+  float radius = size/2;
   
-  RVector cell;
+  RVector cellLocation;
   
   Parasite(){
     
@@ -15,10 +16,10 @@ class Parasite{
   
   }
   
-  void update(RVector cell){
+  void update(Cell cell){
   if(!checkCell()){
-  this.cell = cell;
-  RVector direction = RVector.sub(cell, location);
+  this.cellLocation = cell.getLocation();
+  RVector direction = RVector.sub(cellLocation, location);
   direction.normalize();
   direction.mult(0.1);
   acceleration = direction;
@@ -30,7 +31,7 @@ class Parasite{
   ellipse(location.x,location.y,size,size);
   }
   else{
-    while(1){
+    while(true){
       background(0);
       textSize(32);
       text("YOU LOSE", width/2, height/2); 
@@ -40,8 +41,15 @@ class Parasite{
   }
   
   boolean checkCell(){
-  
+  for (int i = 0; i < 360; i += 10) {
+
+      float xP = location.x + cos(radians(i))*radius; 
+      float yP = location.y + sin(radians(i))*radius; 
+      RVector positionOnCircumference = new RVector(xP, yP);
+      
+      float xC = cellLocation.x;
   
   }
   
+
 }
