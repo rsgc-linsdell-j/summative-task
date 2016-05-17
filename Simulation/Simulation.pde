@@ -1,16 +1,19 @@
 Cell cell;
-Parasite parasite;
-Cyano cyano;
-Proteo proteo;
+Parasite parasites[] = new Parasite[2];
+Cyano cyanos[] = new Cyano[8];
+Proteo proteos[] = new Proteo[15];
 
 void setup(){
 
   size(1280, 720);
   background(0, 204, 0);
   cell = new Cell();
-  parasite = new Parasite();
-  cyano = new Cyano();
-  proteo = new Proteo();
+  for(int i = 0; i<parasites.length; i++)
+    parasites[i] = new Parasite();
+  for(int i = 0; i<cyanos.length; i++)
+    cyanos[i] = new Cyano();
+  for(int i = 0; i<proteos.length; i++)
+    proteos[i] = new Proteo();
 }
 
 void draw(){
