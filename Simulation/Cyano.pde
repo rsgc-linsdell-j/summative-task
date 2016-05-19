@@ -1,5 +1,5 @@
-class Cyano{
-  
+class Cyano {
+
   RVector location;
   RVector velocity;
   RVector acceleration;
@@ -7,44 +7,46 @@ class Cyano{
   float size = 40;
   float radius = size/2;
   
+  boolean isActive = true;
+
   RVector cellLocation;
   Cell cell;
 
-  Cyano(){
-    
+  Cyano() {
+
     location = new RVector(random(width), random(height));
-    velocity = new RVector(0,0);
-  
-  
+    velocity = new RVector(0, 0);
   }
-  
- void update(Cell cell) {
-  this.cell = cell;
-  this.cellLocation = cell.getLocation();
-  if(!collision()){
-  point = new RVector(random(width), random(height));
-  RVector direction = RVector.sub(point, location);
-  direction.normalize();
-  direction.mult(0.1);
-  acceleration = direction;
-  velocity.add(acceleration);
-  velocity.limit(1);
-  location.add(velocity);
-  
-  stroke(0);
-  fill(5,240,217);
-  ellipse(location.x,location.y,size,size);
+
+  void update(Cell cell) {
+    this.cell = cell;
+    this.cellLocation = cell.getLocation();
+    if (!collision()) {
+      if(isActive){
+      point = new RVector(random(width), random(height));
+      RVector direction = RVector.sub(point, location);
+      direction.normalize();
+      direction.mult(0.1);
+      acceleration = direction;
+      velocity.add(acceleration);
+      velocity.limit(1);
+      location.add(velocity);
+
+      stroke(0);
+      fill(5, 240, 217);
+      ellipse(location.x, location.y, size, size);
+      }
+    } else {
+      absorbC();
+      isActive = false;
+    }
   }
-  else{
-  absorbC();
+
+  void absorbC() {
+    textSize(64);
+    text("GOT CYANO", width/2, height/2);
   }
- }
- 
- void absorbC(){
-   textSize(64);
-   text("GOT CYANO", width/2, height/2);
- }
-  
+
   boolean collision() {
     RVector pCirc, cCirc;
     for (int i = 0; i < 360; i += 10) {
@@ -65,6 +67,4 @@ class Cyano{
     // if there is no collision return false
     return false;
   }
-  
-  
 }
