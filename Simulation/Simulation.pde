@@ -4,6 +4,7 @@ Cyano cyanos[] = new Cyano[8];
 Proteo proteos[] = new Proteo[15];
 
 int numOfC = 0;
+int numOfP = 0;
 
 void setup(){
 
@@ -32,4 +33,11 @@ void draw(){
   fill(0);
   textSize(20);
   text("GOT "+numOfC+" CYANO", width-150, 100);
+  text("GOT "+numOfP+" PROTEO", width-150, 200);
+  if(numOfC+numOfP == cyanos.length + proteos.length){
+  win();
+  }
+}
+
+void win(){
 }
