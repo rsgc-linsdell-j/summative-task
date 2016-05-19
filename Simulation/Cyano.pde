@@ -6,13 +6,13 @@ class Cyano {
   RVector point;
   float size = 40;
   float radius = size/2;
-  
+
   boolean isActive = true;
 
   RVector cellLocation;
   Cell cell;
-  
-  
+
+
 
   Cyano() {
 
@@ -24,19 +24,19 @@ class Cyano {
     this.cell = cell;
     this.cellLocation = cell.getLocation();
     if (!collision()) {
-      if(isActive){
-      point = new RVector(random(width), random(height));
-      RVector direction = RVector.sub(point, location);
-      direction.normalize();
-      direction.mult(0.1);
-      acceleration = direction;
-      velocity.add(acceleration);
-      velocity.limit(1);
-      location.add(velocity);
+      if (isActive) {
+        point = new RVector(random(width), random(height));
+        RVector direction = RVector.sub(point, location);
+        direction.normalize();
+        direction.mult(0.1);
+        acceleration = direction;
+        velocity.add(acceleration);
+        velocity.limit(1);
+        location.add(velocity);
 
-      stroke(0);
-      fill(5, 240, 217);
-      ellipse(location.x, location.y, size, size);
+        stroke(0);
+        fill(5, 240, 217);
+        ellipse(location.x, location.y, size, size);
       }
     } else {
       absorbC();
@@ -46,7 +46,6 @@ class Cyano {
   }
 
   void absorbC() {
-    
   }
 
   boolean collision() {
