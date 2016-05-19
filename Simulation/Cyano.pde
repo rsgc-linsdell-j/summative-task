@@ -11,6 +11,8 @@ class Cyano {
 
   RVector cellLocation;
   Cell cell;
+  
+  
 
   Cyano() {
 
@@ -38,13 +40,13 @@ class Cyano {
       }
     } else {
       absorbC();
+      numOfC+=1;
       isActive = false;
     }
   }
 
   void absorbC() {
-    textSize(64);
-    text("GOT CYANO", width/2, height/2);
+    
   }
 
   boolean collision() {

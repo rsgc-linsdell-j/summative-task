@@ -3,6 +3,8 @@ Parasite parasites[] = new Parasite[2];
 Cyano cyanos[] = new Cyano[8];
 Proteo proteos[] = new Proteo[15];
 
+int numOfC = 0;
+
 void setup(){
 
   size(1280, 720);
@@ -27,4 +29,7 @@ void draw(){
     cyanos[i].update(cell);
   for(int i = 0; i<proteos.length; i++)
     proteos[i].update();
+  fill(0);
+  textSize(20);
+  text("GOT "+numOfC+" CYANO", width-150, 100);
 }
