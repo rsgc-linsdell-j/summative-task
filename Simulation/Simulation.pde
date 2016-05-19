@@ -24,7 +24,7 @@ void draw(){
   for(int i = 0; i<parasites.length; i++)
     parasites[i].update(cell);
   for(int i = 0; i<cyanos.length; i++)
-    cyanos[i].update();
+    cyanos[i].update(cell);
   for(int i = 0; i<proteos.length; i++)
     proteos[i].update();
 }

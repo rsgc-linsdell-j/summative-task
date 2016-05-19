@@ -18,7 +18,7 @@ class Parasite {
   void update(Cell cell) {
     this.cell = cell;
     this.cellLocation = cell.getLocation();
-    if (!checkCellCollision()) {
+    if (!collision()) {
       RVector direction = RVector.sub(cellLocation, location);
       direction.normalize();
       direction.mult(0.1);
@@ -30,6 +30,7 @@ class Parasite {
       fill(255, 0, 0);
       ellipse(location.x, location.y, size, size);
     } else {
+        clear();
         background(51);
         textSize(32);
         text("YOU LOSE", width/2, height/2);
@@ -38,7 +39,7 @@ class Parasite {
   }
 
 
-  boolean checkCellCollision() {
+  boolean collision() {
     RVector pCirc, cCirc;
     for (int i = 0; i < 360; i += 10) {
       float xP = location.x + cos(radians(i))*radius; 
