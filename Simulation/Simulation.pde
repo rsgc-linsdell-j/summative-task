@@ -3,6 +3,10 @@ Parasite parasites[] = new Parasite[2];
 Cyano cyanos[] = new Cyano[8];
 Proteo proteos[] = new Proteo[15];
 
+float cellSizeBase = 30;
+float absorbC = 5;
+float absorbP = 2;
+
 int numOfC = 0;
 int numOfP = 0;
 

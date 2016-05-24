@@ -3,7 +3,7 @@ class Cell {
   RVector location;
   RVector velocity;
   RVector acceleration;
-  float size = 30;
+  float size = cellSizeBase;
   float radius = size/2;
 
 
@@ -17,6 +17,8 @@ class Cell {
 
 
   void update() {
+    size = cellSizeBase + (numOfC*absorbC)+(numOfP*absorbP);
+    radius = size/2;
     RVector mouse = new RVector(mouseX, mouseY);
     RVector direction = RVector.sub(mouse, location);
     direction.normalize();
