@@ -25,7 +25,7 @@ class Cell {
     direction.mult(0.1);
     acceleration = direction;
     velocity.add(acceleration);
-    velocity.limit(1.5);
+    velocity.limit(size/cellSizeBase);
     location.add(velocity);
 
     stroke(0);

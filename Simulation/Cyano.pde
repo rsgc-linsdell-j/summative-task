@@ -40,12 +40,13 @@ class Cyano {
       }
     } else {
       absorbC();
-      numOfC+=1;
+
       isActive = false;
     }
   }
 
   void absorbC() {
+    numOfC+=1;
   }
 
   boolean collision() {
