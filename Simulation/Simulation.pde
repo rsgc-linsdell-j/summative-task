@@ -33,7 +33,7 @@ void draw() {
   for (int i = 0; i<cyanos.length; i++)
     cyanos[i].update(cell);
   for (int i = 0; i<proteos.length; i++)
-    proteos[i].update();
+    proteos[i].update(cell);
   fill(0);
   textSize(20);
   text("GOT "+numOfC+" CYANO", width-150, 100);
@@ -44,4 +44,9 @@ void draw() {
 }
 
 void win() {
+      clear();
+      background(51);
+      textSize(32);
+      text("YOU WIN!", width/2, height/2);
+      noLoop();
 }
