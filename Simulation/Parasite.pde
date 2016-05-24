@@ -24,7 +24,7 @@ class Parasite {
       direction.mult(0.1);
       acceleration = direction;
       velocity.add(acceleration);
-      velocity.limit(1);
+      velocity.limit(0.7);
       location.add(velocity);
       stroke(0);
       fill(255, 0, 0);

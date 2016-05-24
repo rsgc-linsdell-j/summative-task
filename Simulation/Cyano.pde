@@ -38,14 +38,14 @@ class Cyano {
         fill(5, 240, 217);
         ellipse(location.x, location.y, size, size);
       }
-    } else {
+    } else if(isActive) {
       isActive = false;
-      absorbC();
+      if(!isActive)
+        absorbC();
     }
   }
 
   void absorbC() {
-    if(!isActive)
       numOfC+=1;
   }
 
