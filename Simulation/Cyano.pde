@@ -39,14 +39,14 @@ class Cyano {
         ellipse(location.x, location.y, size, size);
       }
     } else {
-      absorbC();
-
       isActive = false;
+      absorbC();
     }
   }
 
   void absorbC() {
-    numOfC+=1;
+    if(!isActive)
+      numOfC+=1;
   }
 
   boolean collision() {
