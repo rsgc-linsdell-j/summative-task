@@ -47,6 +47,7 @@ void win() {
       clear();
       background(51);
       textSize(32);
-      text("YOU WIN!", width/2, height/2);
+      fill(255,0,0);
+      text("YOU WIN! YOU HAVE ENGULFED ENOUGH CYANOBACTERIA \n AND PROETOBACTERIA TO FORM ORGANELLES AND \n BECOME A EUKARYOTIC CELL!", 100, height/2);
       noLoop();
 }

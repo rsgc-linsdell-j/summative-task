@@ -33,7 +33,8 @@ class Parasite {
       clear();
       background(51);
       textSize(32);
-      text("YOU LOSE", width/2, height/2);
+      fill(255,0,0);
+      text("YOU LOSE! A PARASITIC BACERIUM ATTACKED YOU AND \n MANAGED TO DESTROY YOU. BETTER LUCK NEXT TIME!", 100, height/2);
       noLoop();
     }
   }
