@@ -19,6 +19,8 @@ class Parasite {
     this.cell = cell;
     this.cellLocation = cell.getLocation();
     if (!collision()) {
+      // if collision is false the parasite keeps moving
+      // parasite always move in direction of the cell
       RVector direction = RVector.sub(cellLocation, location);
       direction.normalize();
       direction.mult(0.1);
@@ -30,10 +32,11 @@ class Parasite {
       fill(255, 0, 0);
       ellipse(location.x, location.y, size, size);
     } else {
+      // if the cell makes contact with a parasite collision is true and the game is over
       clear();
       background(51);
       textSize(32);
-      fill(255,0,0);
+      fill(255, 0, 0);
       text("YOU LOSE! A PARASITIC BACERIUM ATTACKED YOU AND \n MANAGED TO DESTROY YOU. BETTER LUCK NEXT TIME!", 100, height/2);
       noLoop();
     }

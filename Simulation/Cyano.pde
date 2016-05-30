@@ -25,6 +25,7 @@ class Cyano {
     this.cellLocation = cell.getLocation();
     if (!collision()) {
       if (isActive) {
+        // makes the bacterium move towards a random point on the canvas
         point = new RVector(random(width), random(height));
         RVector direction = RVector.sub(point, location);
         direction.normalize();
@@ -33,20 +34,21 @@ class Cyano {
         velocity.add(acceleration);
         velocity.limit(1);
         location.add(velocity);
-
+        // draws the bacterium
         stroke(0);
         fill(5, 240, 217);
         ellipse(location.x, location.y, size, size);
       }
-    } else if(isActive) {
+    } else if (isActive) { // bacterium is hit by cell and is disabled
       isActive = false;
-      if(!isActive)
+      if (!isActive)
         absorbC();
     }
   }
 
+  // add to counter variable
   void absorbC() {
-      numOfC+=1;
+    numOfC+=1;
   }
 
   boolean collision() {

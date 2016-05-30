@@ -6,7 +6,7 @@ class Proteo {
   RVector point;
   float size = 20;
   float radius = size/2;
-  
+
   boolean isActive = true;
 
   RVector cellLocation;
@@ -21,32 +21,34 @@ class Proteo {
   void update(Cell cell) {
     this.cell = cell;
     this.cellLocation = cell.getLocation();
-    if(!collision()){
-      if(isActive){
-    point = new RVector(random(width), random(height));
-    RVector direction = RVector.sub(point, location);
-    direction.normalize();
-    direction.mult(0.1);
-    acceleration = direction;
-    velocity.add(acceleration);
-    velocity.limit(3);
-    location.add(velocity);
-
-    stroke(0);
-    fill(240, 178, 5);
-    ellipse(location.x, location.y, size, size);
-    }
-    }else if(isActive) {
+    if (!collision()) {
+      if (isActive) {
+        // makes the bacterium move towards a random point on the canvas
+        point = new RVector(random(width), random(height));
+        RVector direction = RVector.sub(point, location);
+        direction.normalize();
+        direction.mult(0.1);
+        acceleration = direction;
+        velocity.add(acceleration);
+        velocity.limit(3);
+        location.add(velocity);
+        // draws the bacterium
+        stroke(0);
+        fill(240, 178, 5);
+        ellipse(location.x, location.y, size, size);
+      }
+    } else if (isActive) { // bacterium is hit by cell and is disabled
       isActive = false;
-      if(!isActive)
+      if (!isActive)
         absorbP();
     }
   }
-  
+
+  // add to counter variable
   void absorbP() {
-      numOfP+=1;
+    numOfP+=1;
   }
-  
+
   boolean collision() {
     RVector pCirc, cCirc;
     for (int i = 0; i < 360; i += 10) {
